@@ -1,0 +1,198 @@
+<!-- carrito.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/lg.png">
+
+    <title>Carrito | Luxury Glow</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Css/carrito.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <img src="../img/lg.png" alt="Logo">
+
+            <h1>Luxury Glow</h1>
+
+        </div>
+
+        <nav class="navbar">
+
+            <a href="index.html">Inicio</a>
+            <a href="colecciones.html">Colecciones</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="#">Contacto</a>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CART ================= -->
+
+    <section class="cart">
+
+        <div class="section-title">
+
+            <h2>Tu Carrito</h2>
+
+            <p>
+                Productos agregados a tu colección.
+            </p>
+
+        </div>
+
+        <div class="cart-container" id="cart-container">
+
+            <!-- PRODUCTOS DESDE JS -->
+
+        </div>
+
+        <!-- TOTAL -->
+
+        <div class="cart-summary">
+
+            <h3 id="cart-total">
+                Total: $0
+            </h3>
+
+            <button>
+                Finalizar Compra
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script>
+
+        const cartContainer =
+        document.getElementById('cart-container');
+
+        const totalElement =
+        document.getElementById('cart-total');
+
+        let cart =
+        JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCart(){
+
+            cartContainer.innerHTML = '';
+
+            let total = 0;
+
+            if(cart.length === 0){
+
+                cartContainer.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <h3>
+                            Tu carrito está vacío
+                        </h3>
+
+                    </div>
+
+                `;
+
+                totalElement.innerText =
+                'Total: $0';
+
+                return;
+            }
+
+            cart.forEach((product,index) => {
+
+                total += parseInt(product.price);
+
+                cartContainer.innerHTML += `
+
+                    <div class="cart-card">
+
+                        <div class="cart-image">
+
+                            <img src="${product.image}" alt="">
+
+                        </div>
+
+                        <div class="cart-info">
+
+                            <h3>
+                                ${product.name}
+                            </h3>
+
+                            <p>
+                                $${Number(product.price)
+                                .toLocaleString()}
+                            </p>
+
+                        </div>
+
+                        <button
+                        class="remove-btn"
+
+                        onclick="removeProduct(${index})">
+
+                            Eliminar
+
+                        </button>
+
+                    </div>
+
+                `;
+            });
+
+            totalElement.innerText =
+            `Total: $${total.toLocaleString()}`;
+        }
+
+        function removeProduct(index){
+
+            cart.splice(index,1);
+
+            localStorage.setItem(
+                'cart',
+                JSON.stringify(cart)
+            );
+
+            renderCart();
+        }
+
+        renderCart();
+
+    </script>
+
+</body>
+</html>

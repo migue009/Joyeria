@@ -1,0 +1,323 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/lg.png">
+    <title>Luxury Glow</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Css/index.css">
+
+    <!-- Librería de iconos -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fuente Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo">
+            <img src="../img/lg.png" alt="Logo">
+            <h1>Luxury Glow</h1>
+        </div>
+
+        <nav class="navbar">            
+            <a href="index.html">Inicio</a>
+            <a href="colecciones.html">Colecciones</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <div class="header-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="carrito.html" class="carrito-icon" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+    </section>
+
+    <!-- ================= CATEGORÍAS ================= -->
+    
+    <section class="categories">
+
+        <div class="section-title">
+            <h2>Nuestras Categorías</h2>
+            <p>Diseños exclusivos para cada ocasión</p>
+        </div>
+
+        <div class="categories-container">
+
+            <!-- CARD -->
+            <a href="anillos.html" class="category-card">
+
+                <i class="fa-regular fa-gem"></i>   
+                <h3>Anillos</h3>
+
+            </a>
+
+            <!-- CARD -->
+            <a href="collares.html" class="category-card">
+
+                <i class="fa-solid fa-ring"></i>
+                <h3>Collares</h3>
+
+            </a>
+
+            <!-- CARD -->
+            <a href="pulseras.html" class="category-card">
+
+                <i class="fa-solid fa-crown"></i>
+                <h3>Pulseras</h3>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PRODUCTOS ================= -->
+    <section class="products">
+
+        <div class="section-title">
+            <h2>Productos Destacados</h2>
+        </div>
+
+        <div class="products-container">
+
+            <!-- CARD -->
+            <div class="product-card"
+
+                data-id="11"
+                data-name="Rose Princess"
+                data-price="3200000"
+                data-image="../img/anillo1.jpg"
+                data-category="anillos">
+
+                <div class="product-image">
+                    <img src="../img/anillo1.jpg" alt="">
+                </div>
+
+                <div class="product-info">
+                    <h3>Rose Princess</h3>
+                    <p>Diamante blanco 23gm / Oro rosado 24k.</p>
+
+                    <div class="price-cart">
+                        <span>$3.200.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="product-card"
+
+                data-id="12"
+                data-name="Collar Lava"
+                data-price="2590000"
+                data-image="../img/collar2.jpg"
+                data-category="collares">
+
+                <div class="product-image">
+                    <img src="../img/collar2.jpg" alt="">
+                </div>
+
+                <div class="product-info">
+                    <h3>Collar Lava</h3>
+                    <p>Diamantes blancos 14gm / Oro amarillo 24k.</p>
+
+                    <div class="price-cart">
+                        <span>$2.590.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="product-card"
+
+                data-id="13"
+                data-name="White Diamond"
+                data-price="2890000"
+                data-image="../img/mani1.jpg"
+                data-category="pulseras">
+
+                <div class="product-image">
+                    <img src="../img/mani1.jpg" alt="">
+                </div>
+
+                <div class="product-info">
+                    <h3>White Diamond</h3>
+                    <p>Diamantes blancos 14gm / Oro rosado 24k.</p>
+
+                    <div class="price-cart">
+                        <span>$2.890.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= BANNER ================= -->
+    <section class="banner">
+
+        <div class="banner-content">
+            <h2>Hasta 30% OFF</h2>
+            <p>Por tu primer compra</p>
+
+            <a href="productos.html">
+                <button>Comprar Ahora</button>
+            </a>
+            
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter">
+
+        <h2>Suscríbete</h2>
+
+        <p>
+            Recibe ofertas exclusivas y novedades.
+        </p>
+
+        <div class="newsletter-box">
+            <input type="email" placeholder="Ingresa tu correo">
+            <button>Enviar</button>
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>Luxury</h3>
+
+                <p>
+                    Joyería premium diseñada para destacar.
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Enlaces</h3>
+
+                <a href="#">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Contacto</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Redes Sociales</h3>
+
+                <div class="social-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Luxury Glow - Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+
+    <script>
+
+        /* =========================
+        CARRITO
+        ========================== */
+
+        function addToCart(button){
+
+            const product =
+            button.closest('.ring-card');
+
+            const productData = {
+
+                id:product.dataset.id,
+                name:product.dataset.name,
+                price:product.dataset.price,
+                image:product.dataset.image
+            };
+
+            let cart =
+            JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.push(productData);
+
+            localStorage.setItem('cart',
+            JSON.stringify(cart));
+
+            showNotification(
+            'Producto agregado al carrito');
+        }
+
+        /* =========================
+        NOTIFICACIÓN
+        ========================== */
+
+        function showNotification(message){
+
+            const notification =
+            document.createElement('div');
+
+            notification.classList.add(
+            'cart-notification');
+
+            notification.innerText = message;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add('show');
+            },100);
+
+            setTimeout(() => {
+
+                notification.classList.remove('show');
+
+                setTimeout(() => {
+                    notification.remove();
+                },300);
+
+            },2500);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!-- collares.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/lg.png">
+
+    <title>Collares</title>
+
+    <!-- MISMO CSS -->
+    <link rel="stylesheet" href="/Css/anillos.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <img src="../img/lg.png" alt="Logo">
+            <h1>Luxury Glow</h1>
+        </div>
+
+        <nav class="navbar">            
+            <a href="index.html">Inicio</a>
+            <a href="colecciones.html">Colecciones</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <div class="header-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="carrito.html" class="carrito-icon" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero-collares" id="collares">
+        
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h2>Colección de Collares</h2>
+
+            <p>
+                Diseños exclusivos para complementar tu estilo.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+
+    <section class="rings">
+
+        <div class="section-title">
+            <h2>Collares Destacados</h2>
+        </div>
+
+        <!-- FILTRO -->
+
+        <div class="filter-container">
+
+            <button onclick="filterProducts('all')">
+                Todos
+            </button> 
+
+            <button onclick="filterProducts('low')">
+                Menos de $3.000.000
+            </button>
+
+            <button onclick="filterProducts('high')">
+                Más de $3.000.000
+            </button>
+
+        </div>
+
+        <div class="rings-container">
+
+            <!-- CARD -->
+            <div class="ring-card"
+
+            data-id="5"
+            data-name="Collar Lava"
+            data-price="2590000"
+            data-image="../img/collar2.jpg">
+
+                <div class="ring-image">
+                    <img src="../img/collar2.jpg" alt="">
+                </div>
+
+                <div class="ring-info">
+                    <h3>Collar Lava</h3>
+
+                    <p>
+                        Diamantes blancos 14gm / Oro amarillo 24k.
+                    </p>
+
+                    <div class="price-cart">
+                        <span>$2.590.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="ring-card"
+
+            data-id="6"
+            data-name="Collar Queen"
+            data-price="6700000"
+            data-image="../img/collar1.jpg">
+
+                <div class="ring-image">
+                    <img src="../img/collar1.jpg" alt="">
+                </div>
+
+                <div class="ring-info">
+                    <h3>Collar Queen</h3>
+
+                    <p>
+                        Collar premium inspirado en el lujo moderno.
+                    </p>
+
+                    <div class="price-cart">
+                        <span>$6.700.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="ring-card"
+
+            data-id="7"
+            data-name="Butterfly Luxury"
+            data-price="2390000"
+            data-image="../img/collar3.jpg">
+
+                <div class="ring-image">
+                    <img src="../img/collar3.jpg" alt="">
+                </div>
+
+                <div class="ring-info">
+                    <h3>Butterfly Luxury</h3>
+
+                    <p>
+                        Diseño minimalista y sofisticado.
+                    </p>
+
+                    <div class="price-cart">
+                        <span>$2.390.000</span>
+                        <button onclick="addToCart(this)">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>Luxury</h3>
+
+                <p>
+                    Joyería premium diseñada para destacar.
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Enlaces</h3>
+
+                <a href="index.html">Inicio</a>
+                <a href="colecciones.html">Colecciones</a>
+                <a href="anillos.html">Anillos</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Redes Sociales</h3>
+
+                <div class="social-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Luxury Glow - Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+    /* =========================
+       FILTRO
+    ========================== */
+
+    function filterProducts(type){
+
+        const products = document.querySelectorAll('.ring-card');
+
+        products.forEach(product => {
+
+            const price = parseInt(product.dataset.price);
+
+            if(type === 'all'){
+                product.style.display = 'block';
+            }
+
+            else if(type === 'low'){
+
+                if(price < 3000000){
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none';
+                }
+            }
+
+            else if(type === 'high'){
+
+                if(price >= 3000000){
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none';
+                }
+            }
+
+        });
+
+    }
+
+    /* =========================
+       CARRITO
+    ========================== */
+
+    function addToCart(button){
+
+        const product =
+        button.closest('.ring-card');
+
+        const productData = {
+
+            id:product.dataset.id,
+            name:product.dataset.name,
+            price:product.dataset.price,
+            image:product.dataset.image
+        };
+
+        let cart =
+        JSON.parse(localStorage.getItem('cart')) || [];
+
+        cart.push(productData);
+
+        localStorage.setItem('cart',
+        JSON.stringify(cart));
+
+        showNotification(
+        'Producto agregado al carrito');
+    }
+
+    /* =========================
+       NOTIFICACIÓN
+    ========================== */
+
+    function showNotification(message){
+
+        const notification =
+        document.createElement('div');
+
+        notification.classList.add(
+        'cart-notification');
+
+        notification.innerText = message;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.classList.add('show');
+        },100);
+
+        setTimeout(() => {
+
+            notification.classList.remove('show');
+
+            setTimeout(() => {
+                notification.remove();
+            },300);
+
+        },2500);
+    }
+
+</script>
+
+</body>
+</html>
