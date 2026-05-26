@@ -1,0 +1,233 @@
+/* carrito.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    width:100%;
+    height:90px;
+
+    background:#111;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.logo img{
+    width:70px;
+}
+
+.logo h1{
+    color:gold;
+}
+
+.navbar{
+    display:flex;
+    gap:30px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+}
+
+.header-icons{
+    color:white;
+    font-size:1.3rem;
+}
+
+/* ================= CART ================= */
+
+.cart{
+    padding:160px 8% 100px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.cart-container{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* CARD */
+
+.cart-card{
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.cart-image img{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+}
+
+.cart-info{
+    flex:1;
+}
+
+.cart-info h3{
+    margin-bottom:10px;
+}
+
+.cart-info p{
+    color:#777;
+    font-size:1.1rem;
+}
+
+/* REMOVE BUTTON */
+
+.remove-btn{
+    padding:12px 22px;
+
+    border:none;
+
+    background:#111;
+    color:white;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.remove-btn:hover{
+    background:gold;
+    color:black;
+}
+
+/* SUMMARY */
+
+.cart-summary{
+    margin-top:60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.cart-summary h3{
+    font-size:2rem;
+}
+
+.cart-summary button{
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:gold;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.cart-summary button:hover{
+    background:#111;
+    color:white;
+}
+
+/* EMPTY CART */
+
+.empty-cart{
+    background:white;
+
+    padding:80px 20px;
+
+    border-radius:25px;
+
+    text-align:center;
+}
+
+.empty-cart i{
+    font-size:4rem;
+    color:gold;
+
+    margin-bottom:20px;
+}
+
+.empty-cart h3{
+    font-size:2rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        display:none;
+    }
+
+    .cart-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .cart-summary{
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
